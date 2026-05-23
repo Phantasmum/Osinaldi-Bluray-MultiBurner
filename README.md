@@ -69,3 +69,118 @@ Typical command:
 
 ```bash
 growisofs -dvd-compat -speed=4 -Z '/dev/sr0=/path/movie.iso'
+
+The maximum/automatic speed option is shown in the GUI as:
+
+AWS / Max
+Requirements
+
+Runtime dependencies:
+
+Python 3
+Tkinter
+dvd+rw-tools
+util-linux
+eject
+zenity
+coreutils
+
+On Ubuntu/Debian these are installed automatically by the .deb package.
+
+Recommended permissions
+
+For reliable optical writer access, add your user to the cdrom group:
+
+sudo usermod -aG cdrom "$USER"
+
+Then log out and log back in.
+
+Installation from DEB
+
+Download the .deb package from the Releases page.
+
+If the .deb is inside a ZIP file, extract it first.
+
+Then install it with:
+
+sudo apt install ./osinaldi-bluray-multiburner_1.0.24_all.deb
+
+Launch from the app menu:
+
+Osinaldi BluRay MultiBurner
+
+Or from terminal:
+
+osinaldi-bluray-multiburner
+Portable Linux version
+
+For Linux distributions that do not use .deb packages, download the Portable Linux ZIP or TAR.GZ from the Releases page.
+
+Extract it, open a terminal inside the folder, and run:
+
+./run.sh
+
+Optional dependency installer:
+
+./install_dependencies.sh
+Creating an ISO from a physical disc
+
+Click:
+
+Create ISO from disc...
+
+Select the source writer/reader, review the inserted disc information, choose the destination .iso file, and confirm.
+
+The app uses dd internally with progress reporting.
+
+Logs
+
+Logs are stored in:
+
+~/OsinaldiBurnLogs/
+Configuration
+
+Writer order is saved in:
+
+~/.config/osinaldi-bluray-multiburner/settings.json
+Safety notes
+
+Stopping an active optical burn can make discs unusable. The app requires typing:
+
+STOP BURN
+
+before stopping active or queued operations.
+
+Linux store preparation
+
+This repository includes:
+
+.desktop launcher
+AppStream metadata
+hicolor icons
+MIT license
+changelog
+known issues page
+Debian package
+Portable Linux archive
+
+Keep the application ID stable:
+
+io.github.osinaldi.bluraymultiburner
+Known issues
+
+Some Ubuntu App Center versions may not show custom icons for local .deb files before installation. After installation, the application menu should show the Mirtza Chan icon.
+
+Some Linux systems require the user to be in the cdrom group before optical writers can be accessed reliably.
+
+License
+
+MIT License. See LICENSE.
+
+
+Después de pegarlo, el mensaje de commit pon:
+
+```text
+Fix complete README
+
+Y confirma con Commit changes.
