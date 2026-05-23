@@ -178,9 +178,7 @@ License
 MIT License. See LICENSE.
 
 
-Después de pegarlo, el mensaje de commit pon:
+Cuando hagas commit, pon:
 
 ```text
-Fix complete README
-
-Y confirma con Commit changes.
+Fix README markdown formatting
