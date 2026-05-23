@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Osinaldi BluRay MultiBurner
+Comment=Burn BD-R ISOs to multiple Blu-ray writers
+Exec=./run.sh
+Icon=media-optical
+Terminal=false
+Categories=Utility;AudioVideo;

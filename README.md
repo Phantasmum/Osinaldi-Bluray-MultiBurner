@@ -1,43 +1,157 @@
 # Osinaldi BluRay MultiBurner
 
-**Osinaldi BluRay MultiBurner** is a Linux GUI application designed to make Blu-ray ISO burning simple, reliable, and practical for multi-writer workflows.
+**Osinaldi BluRay MultiBurner 1.0.24 — May 2026** is a Linux GUI application for burning Blu-ray ISO images to multiple BD-R writers in parallel and creating ISO images from physical discs.
 
-The program was created for users who need to burn multiple Blu-ray discs at the same time, especially when working with BD-R media, anime collections, authored Blu-ray ISO files, and compatibility-focused disc creation. It allows each Blu-ray writer to use its own ISO image, or the same master ISO can be copied to all selected writers when needed.
+Mirtza Chan is the program mascot and application icon: **a tribute to my beautiful and beloved wife**.
 
-Unlike generic disc-burning tools, Osinaldi BluRay MultiBurner is focused on one clear purpose: burning Blu-ray ISO images to physical BD-R discs with a simple graphical interface, safe defaults, and a workflow suitable for several drives running in parallel.
-
-## What it does
-
-- Burn Blu-ray ISO images to BD-R discs.
-- Use up to six Blu-ray writers in parallel.
-- Assign a different ISO file to each writer.
-- Copy one master ISO to all selected writers.
-- Create an ISO image from a physical disc.
-- Save the physical order of writers in the interface.
-- Protect active burns from accidental window closure.
-- Provide logs for every operation.
-- Test writer access from the GUI.
-- Use compatibility-focused `growisofs` commands.
-
-## Designed for compatibility
-
-The default writing profile is focused on broad Blu-ray player compatibility, including older or inexpensive Blu-ray players and consoles. The default 4x writing mode is intended for stable BD-R burning workflows, while the `AWS / Max` option is available for automatic or maximum drive speed behavior.
-
-## Built for Linux
-
-Osinaldi BluRay MultiBurner is built for Ubuntu and Linux desktop systems using Python and Tkinter. It integrates with common Linux tools such as `growisofs`, `dd`, `zenity`, `eject`, and standard `/dev/sr*` optical writer devices.
-
-The project includes Debian packaging, AppStream metadata, desktop launcher files, icons, changelog, known issues, and documentation to make future Linux store distribution easier.
-
-## Mirtza Chan
-
-The official mascot and program icon is **Mirtza Chan**.
-
-Mirtza Chan is a cheerful anime-style character created as the visual identity of the program and as a tribute to my beautiful and beloved wife. She appears as the application icon and inside the About window, giving the tool a more personal and friendly identity instead of looking like a generic utility.
-
-## Project information
-
-- Website: https://euroanime.jp.net
-- GitHub: https://github.com/Phantasmum/Osinaldi-Bluray-MultiBurner
-- Contact: phantasmum@proton.me
+- Website: [https://euroanime.jp.net](https://euroanime.jp.net)
+- GitHub: [https://github.com/Phantasmum/Osinaldi-Bluray-MultiBurner](https://github.com/Phantasmum/Osinaldi-Bluray-MultiBurner)
+- Contact: [phantasmum@proton.me](mailto:phantasmum@proton.me)
 - License: MIT
+- Application ID: `io.github.osinaldi.bluraymultiburner`
+- Debian package: `osinaldi-bluray-multiburner`
+
+![Main window](screenshots/main-window.png)
+
+## Features
+
+- Burn up to six Blu-ray ISO images in parallel.
+- Assign a different ISO to every Blu-ray writer.
+- Copy one master ISO to all selected writers.
+- Create ISO images from physical discs.
+- Reorder writers in the GUI to match a physical stacked drive layout.
+- Automatically save writer order between sessions.
+- Source Disk Lock enabled internally with a fixed limit of 3 readers per source disk.
+- Safe close protection while burning or reading.
+- Strong stop confirmation to avoid accidental disc loss.
+- Open logs button.
+- Writer access test button.
+- Native Ubuntu/Linux file picker through `zenity`.
+- Compatibility-focused `growisofs` command line.
+
+## Default writing profile
+
+The default speed mode is 4x compatibility mode.
+
+Typical command:
+
+```bash
+growisofs -dvd-compat -speed=4 -Z '/dev/sr0=/path/movie.iso'
+```
+
+The maximum/automatic speed option is shown in the GUI as:
+
+```text
+AWS / Max
+```
+
+## Requirements
+
+Runtime dependencies:
+
+- Python 3
+- Tkinter
+- dvd+rw-tools
+- util-linux
+- eject
+- zenity
+- coreutils
+
+On Ubuntu/Debian these are installed automatically by the `.deb` package.
+
+## Recommended permissions
+
+For reliable optical writer access, add your user to the `cdrom` group:
+
+```bash
+sudo usermod -aG cdrom "$USER"
+```
+
+Then log out and log back in.
+
+## Installation from DEB
+
+```bash
+sudo apt install ./osinaldi-bluray-multiburner_1.0.24_all.deb
+```
+
+Launch from the app menu:
+
+```text
+Osinaldi BluRay MultiBurner
+```
+
+Or from terminal:
+
+```bash
+osinaldi-bluray-multiburner
+```
+
+## Creating an ISO from a physical disc
+
+Click:
+
+```text
+Create ISO from disc...
+```
+
+Select the source writer/reader, review the inserted disc information, choose the destination `.iso` file, and confirm.
+
+The app uses `dd` internally with progress reporting.
+
+## Logs
+
+Logs are stored in:
+
+```bash
+~/OsinaldiBurnLogs/
+```
+
+## Configuration
+
+Writer order is saved in:
+
+```bash
+~/.config/osinaldi-bluray-multiburner/settings.json
+```
+
+## Safety notes
+
+Stopping an active optical burn can make discs unusable. The app requires typing:
+
+```text
+STOP BURN
+```
+
+before stopping active or queued operations.
+
+## Linux store preparation
+
+This repository includes:
+
+- `.desktop` launcher
+- AppStream metadata
+- hicolor icons
+- MIT license
+- changelog
+- known issues page
+- Debian package
+
+Keep the application ID stable:
+
+```text
+io.github.osinaldi.bluraymultiburner
+```
+
+## License
+
+MIT License. See [LICENSE](LICENSE).
+
+
+## 1.0.24 — May 2026 GitHub repository update
+
+The official GitHub repository is:
+
+```text
+https://github.com/Phantasmum/Osinaldi-Bluray-MultiBurner
+```
