@@ -45,8 +45,9 @@ Unlike generic disc-burning tools, Osinaldi BluRay MultiBurner is focused on one
 - Debian package: `osinaldi-bluray-multiburner`
 
 ## Features
+
 - Burn up to six Blu-ray ISO images in parallel.
-- Assign a different ISO to every Blu-ray writer.
+- Assign a different ISO file to every Blu-ray writer.
 - Copy one master ISO to all selected writers.
 - Create ISO images from physical discs.
 - Reorder writers in the GUI to match a physical stacked drive layout.
@@ -58,6 +59,7 @@ Unlike generic disc-burning tools, Osinaldi BluRay MultiBurner is focused on one
 - Writer access test button.
 - Native Ubuntu/Linux file picker through `zenity`.
 - Compatibility-focused `growisofs` command line.
+- Mirtza Chan mascot and program icon.
 
 ## Default writing profile
 
