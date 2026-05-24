@@ -67,15 +67,15 @@ The default speed mode is 4x compatibility mode.
 
 Typical command:
 
-```bash
+~~~bash
 growisofs -dvd-compat -speed=4 -Z '/dev/sr0=/path/movie.iso'
-```
+~~~
 
 The maximum/automatic speed option is shown in the GUI as:
 
-```text
+~~~text
 AWS / Max
-```
+~~~
 
 ## Requirements
 
@@ -95,9 +95,9 @@ On Ubuntu/Debian these are installed automatically by the `.deb` package.
 
 For reliable optical writer access, add your user to the `cdrom` group:
 
-```bash
+~~~bash
 sudo usermod -aG cdrom "$USER"
-```
+~~~
 
 Then log out and log back in.
 
@@ -109,21 +109,21 @@ If the `.deb` is inside a ZIP file, extract it first.
 
 Then install it with:
 
-```bash
+~~~bash
 sudo apt install ./osinaldi-bluray-multiburner_1.0.24_all.deb
-```
+~~~
 
 Launch from the app menu:
 
-```text
+~~~text
 Osinaldi BluRay MultiBurner
-```
+~~~
 
 Or from terminal:
 
-```bash
+~~~bash
 osinaldi-bluray-multiburner
-```
+~~~
 
 ## Portable Linux version
 
@@ -131,23 +131,23 @@ For Linux distributions that do not use `.deb` packages, download the Portable L
 
 Extract it, open a terminal inside the folder, and run:
 
-```bash
+~~~bash
 ./run.sh
-```
+~~~
 
 Optional dependency installer:
 
-```bash
+~~~bash
 ./install_dependencies.sh
-```
+~~~
 
 ## Creating an ISO from a physical disc
 
 Click:
 
-```text
+~~~text
 Create ISO from disc...
-```
+~~~
 
 Select the source writer/reader, review the inserted disc information, choose the destination `.iso` file, and confirm.
 
@@ -157,25 +157,25 @@ The app uses `dd` internally with progress reporting.
 
 Logs are stored in:
 
-```bash
+~~~bash
 ~/OsinaldiBurnLogs/
-```
+~~~
 
 ## Configuration
 
 Writer order is saved in:
 
-```bash
+~~~bash
 ~/.config/osinaldi-bluray-multiburner/settings.json
-```
+~~~
 
 ## Safety notes
 
 Stopping an active optical burn can make discs unusable. The app requires typing:
 
-```text
+~~~text
 STOP BURN
-```
+~~~
 
 before stopping active or queued operations.
 
@@ -194,9 +194,9 @@ This repository includes:
 
 Keep the application ID stable:
 
-```text
+~~~text
 io.github.osinaldi.bluraymultiburner
-```
+~~~
 
 ## Known issues
 
